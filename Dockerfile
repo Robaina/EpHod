@@ -7,13 +7,14 @@ ENV PYTHONUNBUFFERED=1
 ENV PATH="/usr/local/cuda-11.7/bin:${PATH}"
 ENV LD_LIBRARY_PATH="/usr/local/cuda-11.7/lib64:${LD_LIBRARY_PATH}"
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    python3-pip \
-    && rm -rf /var/lib/apt/lists/*
-
 # Create working directory
 WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements first to leverage Docker cache
 COPY requirements.txt .
