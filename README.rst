@@ -1,3 +1,12 @@
+# :warning: Fork changes :warning: :
+
+* Created a Dockerfile, entry point and minor tweaks to run tool as a docker container
+
+```
+cd EpHod
+docker build -t ephod:latest .
+```
+
 **EpHod**
 ===============
 
